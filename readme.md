@@ -27,6 +27,7 @@ Here's how you can interact with the services:
 
 ##### Creating a New Player
 To create a new player, send a POST request to the following endpoint:
+
 Endpoint: http://localhost:8080/createPlayer
 Request Body: JSON object containing player information, such as name, email, and phone number.
 
@@ -36,22 +37,26 @@ Endpoint: http://localhost:8080/simulateTournament
 
 ##### Getting All Players
 To retrieve a list of all players, send a GET request to the following endpoint:
+
 Endpoint: http://localhost:8080/getAllPlayers
 Response: JSON array containing all players.
 
 ##### Getting a Specific Player
 To retrieve a specific player, send a GET request with the player's ID to the following endpoint:
+
 Endpoint: http://localhost:8080/readPlayer/{playerId}
 Replace {playerId} with the ID of the player you want to retrieve.
 
 ##### Updating a Player
 To update a player's information, send a PUT request with the player's ID and the updated information to the following endpoint:
+
 Endpoint: http://localhost:8080/editPlayer/{playerId}
 Replace {playerId} with the ID of the player you want to update.
 Request Body: JSON object containing the player's updated information.
 
 ##### Deleting a Player
 To delete a player, send a DELETE request with the player's ID to the following endpoint:
+
 Endpoint: http://localhost:8080/deletePlayer/{playerId}
 Replace {playerId} with the ID of the player you want to delete.
 You can use the same set of endpoints to manage teams in a similar fashion.
