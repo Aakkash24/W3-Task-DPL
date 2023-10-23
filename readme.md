@@ -1,5 +1,5 @@
 DPL Project
-This project is a Go-lang implementation of a distributed player league (DPL) system. It consists of two major components:
+This project is a Go-lang implementation of a DevRev player league (DPL) system. It consists of two major components:
 
 Gateway: The gateway is responsible for routing requests to the appropriate service and performing other tasks such as tournament simulation.
 Services: The services are responsible for handling specific operations, such as creating, reading, updating, and deleting players and teams.
