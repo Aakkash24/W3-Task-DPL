@@ -1,0 +1,10 @@
+go 1.21.3
+
+use (
+	.
+	./gateway
+	./services/player-service/cru-service
+	./services/player-service/delete-service
+	./services/team-service/cru-service
+	./services/team-service/delete-service
+)
