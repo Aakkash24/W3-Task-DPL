@@ -15,6 +15,9 @@ Delete service: This service handles delete operations.
 Example Usage
 To create a new player, send a POST request to the following endpoint:
 
+http://localhost:8080/simulateTournament
+Simulates the tournament based on the teams present in the DB.
+
 http://localhost:8080/createPlayer
 The request body should be a JSON object containing the player's information, such as name, email, and phone number.
 
@@ -39,3 +42,6 @@ http://localhost:8080/deletePlayer/{playerId}
 Replace {playerId} with the ID of the player you want to delete.
 
 You can use the same endpoints to manage teams.
+
+
+REPLACE localhost with your Host IP
