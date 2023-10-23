@@ -68,7 +68,7 @@ func UpdateTeamPoints(teamData TeamData) error {
 		fmt.Println("Error in marshalling")
 		return err
 	}
-	req, err := http.NewRequest("GET", "http://192.168.29.200:8080/updateTeamPoints", bytes.NewBuffer(reqBody))
+	req, err := http.NewRequest("GET", "http://localhost:8080/updateTeamPoints", bytes.NewBuffer(reqBody))
 	if err != nil {
 		fmt.Println("Error making request", err)
 		return err
@@ -84,7 +84,7 @@ func UpdateTeamPoints(teamData TeamData) error {
 }
 
 func ScheduleTournament(w http.ResponseWriter, r *http.Request) {
-	resp, err := http.Get("http://192.168.29.200:8125/getAllTeams")
+	resp, err := http.Get("http://localhost:8125/getAllTeams")
 	if err != nil {
 		fmt.Println("Error making GET request:", err)
 		return
@@ -135,17 +135,17 @@ func main() {
 		_, _ = io.WriteString(w, "Home page")
 	}).Methods("GET")
 
-	router.HandleFunc("/createPlayer", forwardRequest("http://192.168.29.200:8123/createPlayer", http.MethodPost, false, false)).Methods("GET")
-	router.HandleFunc("/readPlayer/{playerId}", forwardRequest("http://192.168.29.200:8123/readPlayer", http.MethodGet, true, false)).Methods("GET")
-	router.HandleFunc("/editPlayer/{playerId}", forwardRequest("http://192.168.29.200:8123/editPlayer", http.MethodPut, true, false)).Methods("GET")
-	router.HandleFunc("/deletePlayer/{playerId}", forwardRequest("http://192.168.29.200:8124/deletePlayer", http.MethodDelete, true, false)).Methods("GET")
+	router.HandleFunc("/createPlayer", forwardRequest("http://localhost:8123/createPlayer", http.MethodPost, false, false)).Methods("GET")
+	router.HandleFunc("/readPlayer/{playerId}", forwardRequest("http://localhost:8123/readPlayer", http.MethodGet, true, false)).Methods("GET")
+	router.HandleFunc("/editPlayer/{playerId}", forwardRequest("http://localhost:8123/editPlayer", http.MethodPut, true, false)).Methods("GET")
+	router.HandleFunc("/deletePlayer/{playerId}", forwardRequest("http://localhost:8124/deletePlayer", http.MethodDelete, true, false)).Methods("GET")
 
-	router.HandleFunc("/createTeam", forwardRequest("http://192.168.29.200:8125/createTeam", http.MethodPost, false, false)).Methods("GET")
-	router.HandleFunc("/readTeam/{teamId}", forwardRequest("http://192.168.29.200:8125/readTeam", http.MethodGet, false, true)).Methods("GET")
-	router.HandleFunc("/editTeam/{teamId}", forwardRequest("http://192.168.29.200:8125/editTeam", http.MethodPut, false, true)).Methods("GET")
-	router.HandleFunc("/getAllTeams", forwardRequest("http://192.168.29.200:8125/getAllTeams", http.MethodGet, false, false)).Methods("GET")
-	router.HandleFunc("/updateTeamPoints", forwardRequest("http://192.168.29.200:8125/updateTeamPoints", http.MethodPut, false, false)).Methods("GET")
-	router.HandleFunc("/deleteTeam/{teamId}", forwardRequest("http://192.168.29.200:8126/deleteTeam", http.MethodDelete, false, true)).Methods("GET")
+	router.HandleFunc("/createTeam", forwardRequest("http://localhost:8125/createTeam", http.MethodPost, false, false)).Methods("GET")
+	router.HandleFunc("/readTeam/{teamId}", forwardRequest("http://localhost:8125/readTeam", http.MethodGet, false, true)).Methods("GET")
+	router.HandleFunc("/editTeam/{teamId}", forwardRequest("http://localhost:8125/editTeam", http.MethodPut, false, true)).Methods("GET")
+	router.HandleFunc("/getAllTeams", forwardRequest("http://localhost:8125/getAllTeams", http.MethodGet, false, false)).Methods("GET")
+	router.HandleFunc("/updateTeamPoints", forwardRequest("http://localhost:8125/updateTeamPoints", http.MethodPut, false, false)).Methods("GET")
+	router.HandleFunc("/deleteTeam/{teamId}", forwardRequest("http://localhost:8126/deleteTeam", http.MethodDelete, false, true)).Methods("GET")
 	router.HandleFunc("/scheduleTournament", ScheduleTournament).Methods("GET")
 
 	fmt.Println("Starting server on port 8080")
