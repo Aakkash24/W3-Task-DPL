@@ -1,5 +1,5 @@
 # Go-lang DPL Implementation
-This project is an implementation of DPL (Data Persistence Layer) in Go-lang. It consists of two major components:
+This project is an implementation of DPL in Go-lang. It consists of two major components:
 
 ## Gateway
 The gateway is responsible for routing requests to the appropriate service and performing other tasks, such as tournament simulation.
