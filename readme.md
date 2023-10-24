@@ -62,7 +62,7 @@ Replace {playerId} with the ID of the player you want to delete.
 You can use the same set of endpoints to manage teams in a similar fashion.
 
 ### Sample Response for Tournament Simulation
-
+```
 {
     "Fixtures": [
         {
@@ -121,5 +121,5 @@ You can use the same set of endpoints to manage teams in a similar fashion.
     },
     "TournamentWinner": "Chennai Strikers"
 }
-
+```
 Note: Replace localhost in the endpoints with your host's IP address.
