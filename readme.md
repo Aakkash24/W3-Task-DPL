@@ -61,4 +61,65 @@ Endpoint: http://localhost:8080/deletePlayer/{playerId}
 Replace {playerId} with the ID of the player you want to delete.
 You can use the same set of endpoints to manage teams in a similar fashion.
 
+### Sample Response for Tournament Simulation
+
+{
+    "Fixtures": [
+        {
+            "Team1": "Chennai Strikers",
+            "Team2": "Bangalore Bulls",
+            "Winner": "Chennai Strikers"
+        },
+        {
+            "Team1": "Chennai Strikers",
+            "Team2": "Austin Rhinos",
+            "Winner": "Austin Rhinos"
+        },
+        {
+            "Team1": "Chennai Strikers",
+            "Team2": "Slovenia Scrorpions",
+            "Winner": "Chennai Strikers"
+        },
+        {
+            "Team1": "Bangalore Bulls",
+            "Team2": "Austin Rhinos",
+            "Winner": "Bangalore Bulls"
+        },
+        {
+            "Team1": "Bangalore Bulls",
+            "Team2": "Slovenia Scrorpions",
+            "Winner": "Bangalore Bulls"
+        },
+        {
+            "Team1": "Austin Rhinos",
+            "Team2": "Slovenia Scrorpions",
+            "Winner": "Austin Rhinos"
+        }
+    ],
+    "PointsTable": [
+        {
+            "TeamName": "Chennai Strikers",
+            "Points": 5
+        },
+        {
+            "TeamName": "Bangalore Bulls",
+            "Points": 5
+        },
+        {
+            "TeamName": "Austin Rhinos",
+            "Points": 5
+        },
+        {
+            "TeamName": "Slovenia Scrorpions",
+            "Points": -3
+        }
+    ],
+    "Final": {
+        "Team1": "Chennai Strikers",
+        "Team2": "Bangalore Bulls",
+        "Winner": "Chennai Strikers"
+    },
+    "TournamentWinner": "Chennai Strikers"
+}
+
 Note: Replace localhost in the endpoints with your host's IP address.
