@@ -84,7 +84,7 @@ func UpdateTeamPoints(teamData TeamData) error {
 }
 
 func ScheduleTournament(w http.ResponseWriter, r *http.Request) {
-	resp, err := http.Get("http://192.168.29.200:8125/getAllTeams")
+	resp, err := http.Get("http://localhost:8125/getAllTeams")
 	if err != nil {
 		fmt.Println("Error making GET request:", err)
 		return
